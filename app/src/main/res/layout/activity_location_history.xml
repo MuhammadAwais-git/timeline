@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerVertical="true"
+    android:layout_gravity="center_vertical"
+    android:orientation="vertical"
+    android:background="#FAF9F9"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/mImgBack"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/mtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="My Places"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/mDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:text="24"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_40sdp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mImgBack" />
+
+    <TextView
+        android:id="@+id/mDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="start"
+        android:text="thu\nfeb2202"
+        android:layout_marginStart="10dp"
+        android:textColor="#BCC1CD"
+        app:layout_constraintBottom_toBottomOf="@+id/mDate"
+        app:layout_constraintStart_toEndOf="@+id/mDate"
+        app:layout_constraintTop_toTopOf="@+id/mDate" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_top_corners"
+        android:elevation="0dp"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mDate">
+
+
+        <com.sahana.horizontalcalendar.HorizontalCalendar
+            android:id="@+id/horizontalCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:numOfDays="180"
+            app:setBgColor="@color/white"
+            app:setDateFontStyle="@string/light"
+            app:setDateTextSize="@dimen/twenty_two_sp"
+            app:setLabel="@string/title"
+            app:setLabelFontStyle="@string/bold"
+            app:setMonthFontStyle="@string/bold"
+            app:setMonthTextSize="0dp"
+            app:setSelectedBgColor="#4DC591"
+            app:setSelectedTextColor="@color/white"
+            app:setTextColor="#000000"
+            app:setWeekTextSize="13sp" />
+<!--
+    <com.github.jhonnyx2012.horizontalpicker.HorizontalPicker
+        android:id="@+id/datePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />-->
+<!--
+
+    <devs.mulham.horizontalcalendar.HorizontalCalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:textColorSelected="#FFFF" />
+-->
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mRecyclerViewPlaces"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalCalendar"
+        tools:listitem="@layout/item_location_history" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerVertical="true"
+    android:layout_gravity="center_vertical"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".LocationHistoryActivity">
+
+
+    <com.sahana.horizontalcalendar.HorizontalCalendar
+        android:id="@+id/horizontalCalendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:numOfDays="90"
+        app:setBgColor="@color/colorPrimary"
+        app:setDateFontStyle="@string/light"
+        app:setDateTextSize="@dimen/twenty_two_sp"
+        app:setLabel="@string/title"
+        app:setLabelFontStyle="@string/bold"
+        app:setMonthFontStyle="@string/bold"
+        app:setMonthTextSize="17sp"
+        app:setSelectedBgColor="@color/colorAccent"
+        app:setSelectedTextColor="@color/white"
+        app:setTextColor="@color/white"
+        app:setWeekTextSize="13sp" >
+
+    </com.sahana.horizontalcalendar.HorizontalCalendar>
+
+    <TextView
+        android:id="@+id/mDateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horizontalCalendar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mDateTextView"
+        tools:listitem="@layout/item_location_history" />
+</androidx.constraintlayout.widget.ConstraintLayout>-->
